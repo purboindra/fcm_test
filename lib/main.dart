@@ -108,6 +108,8 @@ Future<void> main() async {
           messagingSenderId: '991930593263',
           projectId: 'test-fcm-3b5dc'));
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  await setupFlutterNotifications();
+
   final token = await FirebaseMessaging.instance.getToken();
   final tokenn = await FirebaseMessaging.instance.getAPNSToken();
   print('TOKEN FCM $token');
